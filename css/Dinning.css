@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* customize the style of the cursor*/
+.cursor{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 2px solid salmon;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    pointer-events: none;/* the element does not react to pointer events*/
+    transition-duration: 220ms;
+    transition-timing-function: ease-out;
+    z-index: 900;
+}
+
+.cursor::after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    border: 6px solid salmon;
+    border-radius: 50%;
+    opacity: 0.5;
+    top: 4.5%;
+    left: 4.5%;
+    animation: cursorAnim2 0.5s infinite alternate;
+}
+
+/*the animation of the cursor*/
+@keyframes cursorAnim2{
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.4);
+    }
+}
+
+
+/*Hide the scroll bar*/
+::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    text-decoration: none;/*Remove the underline of link*/
+    color: inherit;
+}
+
+
+
+.container{
+    width:100% ;
+    max-width: 120rem;
+    padding: 0em ;
+    overflow: hidden;
+    margin:0 auto;
+}
+
+section{
+    padding: 5rem 0;
+}
+
+/*header style*/
+.header{
+    width:100% ;
+    height: 800px; 
+}
+
+/*header styles -nav*/
+
+.nav{
+    width: 100%;
+    position: fixed;
+    height: 90px;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center; 
+    transition: 0.6s;
+    z-index: 10;
+}
+
+nav.sticky{
+    padding: 5px 15px;
+    opacity: 0.9;
+    background: white;
+}
+
+
+.nav ul li{
+    color: white;
+    display: inline-block;
+    margin-right: 40px;/*the distance between each of navigation label*/
+}
+
+ul li a{
+    margin: 5px;
+    font-size: 1.6rem;
+}
+/* */
+.nav ul{
+    list-style: none;/*remove the point in front of the link*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+/* the font of navigation changes from black to blue when the mouse is hovering over it*/
+header nav ul li a:hover{
+    color:#29b7cb;
+    font-weight: bold;
+}
+
+.logo{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 2.8em;
+    color: white;
+    margin-left: 40px;
+}
+/*TODO*/
+.cursor.nav-active{
+    background: rgb(86, 124, 228);
+    transform: scale(3);
+}
+
+
+nav.sticky .logo,
+nav.sticky ul li a{
+    color: #000;
+}
+
+.showcase{
+    height: 110vh;
+    width: 100%;
+    background-image: url(../image/dinning1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    margin-bottom: 5%;
+}
+
+/*add a mask on the image*/
+.showcase:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color:  rgba(53, 10, 79, .5);
+    opacity: 0.3;
+    z-index: 2;
+    width: 100%;
+    height: 110vh;
+}
+
+.showcase h1{
+    line-height: 110vh;
+    font-size: 4.5em;
+}
+
+.title{
+    margin: 9% 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+/*the introduction of chef*/
+.overview{
+    margin: 0 5%;
+}
+
+.chef{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.introduction_chief{
+    width: 26%;
+    height: 400px;
+}
+
+.introduction_chief h3{
+    font-size: 2.2em;
+}
+
+.introduction_chief p{
+    margin-top:15%;
+    font-size: 1.2em;
+}
+
+.chef_image{
+    width: 30%;
+    height: 600px;
+    background-image: url(../image/two_chef.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*the style of food_image*/
+.food{
+    margin: 10% 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.food_instroduction{
+    width: 35%;
+    height: 400px;
+    font-size: 1.2em;
+}
+
+
+.food_image{
+    width: 40%;
+    height: 400px;
+    background-image: url(../image/food2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.second_title{
+    margin: 10% 0;
+    text-align: center;
+    font-size: 2.6em;
+}
+
+/*the style of restaurant*/
+.restaurant_part{
+    margin: 10% 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.restaurant_part h3{
+    font-size: 2.2em;
+}
+
+.restaurant_part p{
+    margin-top:15%;
+    font-size: 1.2em;
+}
+
+.restaurant1{
+    width: 40%;
+    height: 400px;
+    background-image: url(../image/restaurant.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.restaurant2{
+    width: 40%;
+    height: 400px;
+    background-image: url(../image/beach_view-re.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*footer*/
+.head1{
+    display: inline-block;
+    background-image: url(../image/taveler2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75px;
+    height: 75px;
+    border: 3px #29b7cb solid;
+    border-radius: 100px;   
+}
+
+.head2{
+    display: inline-block;
+    background-image: url(../image/traveller3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75px;
+    height: 75px;
+    border: 3px #29b7cb solid;
+    border-radius: 100px;   
+}
+
+
+.contact1{
+    background-color:   #29b7cb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cotbox1{
+    color: white;
+    height: 290px;
+    margin-bottom: 5px;
+    margin-left: 23%;
+}
+
+.social_media{
+    display: flex;
+    margin: 30px 0px;
+}
+
+.social_media a{
+    margin: 5px 30px 0px 0px ;
+}
+
+.time{
+    margin-top: 50px;
+}
+
+.cotbox1 p{
+    margin-top: 50px;
+}
+
+.address{
+    color: white;
+    height: 290px;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+
+.address p{
+    margin-top: 15px;
+}
+
+/*Book button*/
+
+.Book-button{
+    padding-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.Book-button a{
+    border: 6px solid  black;
+    border-radius: 4px;
+    font-size: 3em;
+    color: black;
+}
+
+.Book-button a:hover{
+    color: #29b7cb;
+}

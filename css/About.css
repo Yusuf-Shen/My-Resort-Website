@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #303032;
+}
+
+.cursor{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 2px solid salmon;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    pointer-events: none;/* the element does not react to pointer events*/
+    transition-duration: 220ms;
+    transition-timing-function: ease-out;
+    z-index: 900;
+}
+
+.cursor::after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    border: 6px solid salmon;
+    border-radius: 50%;
+    opacity: 0.5;
+    top: 1%;
+    left: 1%;
+    animation: cursorAnim2 0.5s infinite alternate;
+}
+
+/*the animation of the cursor*/
+
+@keyframes cursorAnim2{
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.4);
+    }
+}
+
+/*Hide the scroll bar*/
+::-webkit-scrollbar{
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.6s;
+    color: white;
+    flex-wrap: column;
+}
+
+.nav .logo{
+    margin-left: 2%;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 2.8em;
+    color: white;
+}
+
+.nav ul{
+    display: flex;
+    width: 25%;/*make the nav bar appear the appropriate*/
+    margin-right: 9%;
+}
+
+.nav ul li{
+    margin-right: 10%;
+}
+
+.nav ul li a{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav ul li a:hover{
+    font-weight: bold;
+    color: #29b7cb;
+}
+
+nav.sticky{
+    padding: 5px auto;
+    opacity: 0.9;
+    background: white;
+}
+
+nav.sticky .logo,
+nav.sticky ul li a{
+    color: #000;
+}
+
+/*My name and resort*/
+
+.Instroduction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+/* the style of name */
+#wrapper{
+    width: 45%;
+}
+
+path{
+    stroke: white;
+    fill: white;
+    stroke-dasharray: 630;
+    opacity: 10;
+    animation: text 3s ease-in-out;
+}
+
+@keyframes text{
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 630;
+    }
+
+    30%{
+        opacity: 10;
+        fill: none;
+        stroke-dashoffset: 630;
+    }
+    
+    100%{
+        fill: black;
+    }
+}
+
+.author{
+    text-align: center;
+    margin-top: 12%;
+    font-size: 3em;
+    color: white;
+    opacity: 10;
+    animation: author  3s ;
+}
+
+@keyframes author{
+    0%{
+        animation-delay: 4s;
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 10;
+    }
+
+}
+
+.background-color{
+    background-color: #303032;
+}
+
+.Title{
+    padding-top: 6%;
+    text-align: center;
+    font-size: 3em;
+    color: white;
+}
+
+.image-area{
+    background-color: #303032;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.free_image{
+    margin-right: 3%;
+}
+
+.img-box{
+    margin-top: 9%;
+    width: 360px;
+    height: 300px;
+    background-color: #303032;
+}
+
+.img-box img{
+    margin-top: 9%;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.img-box2{
+    margin-top: 9%;
+    width: 360px;
+    height: 430px;
+    background-color: #303032;
+}
+
+.img-box2 img{
+    margin-top: 9%;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.reference{
+    margin-top: 9%;
+    background-color: #39393b;
+    width: 360px;
+    height: 100px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.reference2{
+    margin-top: 9%;
+    background-color: #39393b;
+    width: 360px;
+    height: 100px;
+    margin-bottom: 30%;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.image-area1{
+    background-color: #303032;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.image-area1 .free_image{
+    margin-bottom: 60px;
+}
+
+
+/*footer*/
+.head1{
+    display: inline-block;
+    background-image: url(../image/taveler2.jpg);/*https://www.pexels.com/zh-cn/photo/2577274/*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75px;
+    height: 75px;
+    border: 3px #303032 solid;
+    border-radius: 100px;   
+}
+
+.head2{
+    display: inline-block;
+    background-image: url(../image/traveller3.jpg);/*https://www.pexels.com/zh-cn/photo/4988248/*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75px;
+    height: 75px;
+    border: 3px #303032 solid;
+    border-radius: 100px;   
+}
+
+
+.contact1{
+    background-color:   #39393b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6%;
+}
+
+.cotbox1{
+    color: white;
+    height: 290px;
+    margin-bottom: 5px;
+    margin-left: 23%;
+}
+
+.social_media{
+    display: flex;
+    margin: 30px 0px;
+}
+
+.social_media a{
+    margin: 5px 30px 0px 0px ;
+}
+
+.time{
+    margin-top: 50px;
+}
+
+.cotbox1 p{
+    margin-top: 50px;
+}
+
+.address{
+    color: white;
+    height: 290px;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+
+.address p{
+    margin-top: 15px;
+}

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    color: white;
+    letter-spacing: 1px;
+    background-image: url(../image/Booking_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cursor{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 2px solid salmon;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    pointer-events: none;/* the element does not react to pointer events*/
+    transition-duration: 220ms;
+    transition-timing-function: ease-out;
+    z-index: 900;
+}
+
+.cursor::after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    border: 6px solid salmon;
+    border-radius: 50%;
+    opacity: 0.5;
+    top: 1%;
+    left: 1%;
+    animation: cursorAnim2 0.5s infinite alternate;
+}
+
+/*the animation of the cursor*/
+
+@keyframes cursorAnim2{
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.4);
+    }
+}
+
+/*Hide the scroll bar*/
+::-webkit-scrollbar{
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.6s;
+    color: white;
+    flex-wrap: column;
+}
+
+.nav .logo{
+    margin-left: 2%;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 2.8em;
+    color: white;
+}
+
+
+.background_image{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Booking_form form{
+    width: 400px;
+    background-color: rgba(0, 0, 0,0.8);    
+}
+
+
+.Booking_form form h2{
+    text-align: center;
+}
+
+
+
+.form-field p {
+    font-size: 2rem;
+    margin: 2% 0;
+}
+.box{
+    color: white;
+    line-height: 40px;
+    border-radius: 6px;
+    width: 40%;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.box_adult{
+    line-height: 40px;
+    border-radius: 6px;
+    width: 15%;
+}
+
+.btn{
+    line-height: 40px;
+    border-radius: 6px;
+    width: 60%;
+    margin:6% 20%;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+
+/*
+.form-field2 p{
+    margin: 2% 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+

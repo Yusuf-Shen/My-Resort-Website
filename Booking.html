@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysLuxury</title>
+    <link rel="stylesheet" href="./css/Booking.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script><!--the stars icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="logo"> 
+              <p>MysLuxury</p>
+            </a>
+        </nav> 
+    </header>
+
+    <div class="background_image">
+
+            <div class="Booking_form">
+                <form>
+                    <h2 class="heading heading-yellow">Reservation Online</h2>
+                    <div class="form-field">
+                        <p>Name</p>
+                        <input class="box" type="text" placeholder="first Name">
+                        <input class="box" type="text" placeholder="last  Name">
+                    </div>
+
+                    <div class="form-field">
+                        <p class="name">Email</p>
+                        <input class="box" type="email" placeholder="Your Email">
+                    </div>
+
+                    <div class="form-field">
+                        <p>Check In</p>
+                        <input class="box" type="date" placeholder="Your Name">
+                        <p>Check Out</p>
+                        <input class="box" type="date" placeholder="Your Name">
+                    </div>
+
+                    <div class="form-field">
+                        <p>Adult(s)</p>
+                        <select class="box_adult" name="select" id="#">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <p>Children</p>
+                        <select class="box_adult" name="select" id="#">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    
+                    <button class="btn" onclick="myclick()">Booking</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+  <script src="./js/button.js"></script>
+  <script src="./js/cursor.js"></script><!--cursor effects-->
+  <script src="./js/wee.js"></script>
+</body>
+</html>

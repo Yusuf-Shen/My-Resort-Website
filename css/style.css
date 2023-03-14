@@ -1,0 +1,838 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"); /*LOGO的样式*/
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap"); /*our resort style*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"); /*view our room*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); /*adventure*/
+
+/*get rid of the default position of element*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "open sans", sans-serif;
+}
+/* customize the style of the cursor*/
+.cursor {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 2px solid salmon;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* the element does not react to pointer events*/
+  transition-duration: 220ms;
+  transition-timing-function: ease-out;
+  z-index: 900;
+}
+
+.cursor::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  border: 6px solid salmon;
+  border-radius: 50%;
+  opacity: 0.5;
+  top: 4.5%;
+  left: 4.5%;
+  animation: cursorAnim2 0.5s infinite alternate;
+}
+
+/*the animation of the cursor*/
+@keyframes cursorAnim2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.4);
+  }
+}
+
+/*Hide the scroll bar*/
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none; /*Remove the underline of link*/
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  padding: 0em;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/*header style*/
+.header {
+  width: 100%;
+  height: 800px;
+}
+
+/*header styles -nav*/
+
+.nav {
+  width: 100%;
+  position: fixed;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  z-index: 10;
+}
+
+nav.sticky {
+  padding: 5px 15px;
+  opacity: 0.9;
+  background: white;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin-right: 40px; /*the distance between each of navigation label*/
+}
+
+ul li a {
+  margin: 5px;
+  font-size: 1.2rem;
+}
+/* */
+.nav ul {
+  list-style: none; /*remove the point in front of the link*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* the font of navigation changes from black to blue when the mouse is hovering over it*/
+header nav ul li a:hover {
+  color: #29b7cb;
+  font-weight: bold;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  font-size: 2.8em;
+  color: black;
+  margin-left: 40px;
+}
+/*TODO*/
+.cursor.nav-active {
+  background: rgb(86, 124, 228);
+  transform: scale(3);
+}
+
+nav.sticky .logo,
+nav.sticky ul li a {
+  color: #000;
+}
+
+/*set the media query for making a responbsive menu*/
+@media screen and (max-width: 800px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
+
+/* this is the first part of the website*/
+.showcase {
+  height: 110vh;
+  background-image: url(../image/the_overview_of_resort.jpeg);
+  background-size: cover;
+  text-align: center;
+}
+
+/*the font style in showcase*/
+.showcase h1 {
+  padding-top: 20%;
+  font-family: "Suez One", serif;
+  font-size: 2rem;
+  color: gray;
+}
+
+/*h2的文字样式*/
+.showcase p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Dancing Script", cursive;
+}
+
+/*the part of our resort*/
+#boxes {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.box {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  padding: 50px 100px 0px 50px;
+}
+
+.gate_resort {
+  width: 44%;
+  height: 750px;
+  z-index: 2;
+  position: relative;
+  left: 20%;
+  bottom: 10%;
+  background: url(../image/the_gate.jpg) no-repeat;
+  background-size: contain; /*make the background image fulfill the box*/
+  background-attachment: unset;
+  z-index: 2;
+}
+
+.first_to_introduce {
+  margin-top: 5%;
+  width: 800px;
+  height: 750px;
+  background-color: #eef7f2;
+  color: black;
+  margin-right: 15%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}
+
+.text h5 {
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 50px;
+  font-family: "Merriweather", serif;
+}
+
+.text p {
+  margin: 30px auto;
+  font-family: "Merriweather", serif;
+}
+
+.text {
+  position: relative;
+  width: 300px;
+  margin-left: 50%;
+  padding-top: 180px;
+}
+
+.button_read a {
+  margin-top: 1%;
+}
+
+/*button syle of READ the story*/
+.box .first_to_introduce .text .button_read {
+  color: black;
+  border: 1px solid #20a162;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 45%;
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 0 15px;
+  height: 33px;
+  transition: all 0.2s ease-in-out;
+}
+
+.box .first_to_introduce .text .button_read:hover {
+  color: #29b7cb;
+  animation: swing 2s linear;
+  animation-iteration-count: 3;
+}
+
+@keyframes swing {
+  15% {
+    transform: translateY(5px);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  65% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*middle text*/
+#Different_type_room {
+  margin-top: 100px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+}
+
+#Different_type_room h2 :nth-child(2) {
+  padding-top: 30px;
+  color: black;
+  font-size: 60px;
+}
+
+/*the_title_of_room and line style*/
+.container h1 {
+  margin: 3% auto;
+  text-align: center;
+  margin-bottom: 0px;
+  color: black;
+  font-weight: 600;
+  font-size: 50px;
+  font-family: "Merriweather", serif;
+}
+
+/*the line below of the "stay" word*/
+.linestyle {
+  margin: auto;
+  border: solid #29b7cb;
+  width: 300px;
+}
+
+/*showroom style*/
+#showroom {
+  padding-top: 10px;
+  margin: 0px;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.room {
+  position: relative;
+  width: 450px;
+  height: 600px;
+  background: black;
+  overflow: hidden;
+  margin: 20px; /*the distance of each of the box*/
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+/*the hover effect of image become bigger and darker*/
+.room:hover img {
+  transition: all 0.4s ease-out;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.room:hover img {
+  transform: scale(1.2);
+  opacity: 0.6;
+  transition: 0.9s;
+}
+
+.room .content {
+  position: absolute;
+  width: 450px;
+  height: 600px;
+  top: 50%;
+  transform: translateY(-50%); /* this means the text down 50% along the y axis compared with the original position. */
+  z-index: 7;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 300px;
+}
+
+.room .content h2 {
+  margin: 0 0 5px;
+  color: white;
+  font-family: "Merriweather", serif;
+  transition: 0.9s;
+  transform: translateY(0px);
+  z-index: 8;
+  opacity: 1;
+}
+
+.room .content p {
+  color: white;
+  font-family: "Merriweather", serif;
+  transition: 0.9s;
+  transform: translateY(50px);
+  z-index: 8;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.room .content .button_room {
+  font-size: inherit;
+  border: 3px solid white;
+  border-radius: 2px;
+  margin-top: 5em;
+  color: white;
+  font-family: "Merriweather", serif;
+  background-color: transparent;
+  transition: 0.9s;
+  margin-left: 38%;
+  width: 22.5%;
+  transform: translateY(70px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+/*The effect of hovering, the principle is that the text description of Villa is not displayed,
+ when the mouse hovers over the picture, it changes to visible text, and the place where the room name appears on the picture is not changed*/
+
+.room :hover.content h2 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-30px);
+  transition-delay: 0.2s;
+}
+
+.room :hover.content p {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition-delay: 0.2s;
+}
+
+.room :hover.content .button_room {
+  visibility: visible;
+  transform: translateY(10px);
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+/*this part is included room,restaurant,adventure*/
+#villa_restrurant_brief {
+  margin-top: 80px;
+}
+
+/*view room text style*/
+.view_room {
+  font-family: "Dancing Script", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+/*the underline of view room*/
+
+.link_room {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.link_room a {
+  position: relative;
+  font-size: 30px;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+}
+
+.link_room a::after {
+  position: absolute;
+  content: "";
+  width: 223px;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: gray;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.link_room a:hover {
+  color: gray;
+}
+
+.link_room a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.short_instruction {
+  position: relative;
+  color: white;
+  padding: 160px;
+  font-size: 40px;
+  width: 100%;
+}
+
+/*This is part of restaurant*/
+.instruction_of_restaurant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 150px 0;
+  width: 100%;
+  height: 600px;
+  background-color: #2f3640;
+}
+
+.instruction_of_restaurant .short_instruction p {
+  height: 30px;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.link_restaurant_page {
+  margin-top: 30px;
+  font-family: "Open Sans", sans-serif;
+  width: 276px; /*the reason why i change the value is that the width is same as the width of underline*/
+  font-size: 30px;
+}
+
+/*view our restaurant underline*/
+.link_restaurant_page a {
+  position: relative;
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  padding: 4px 0;
+  transition: 0.5s;
+}
+
+.link_restaurant_page a::after {
+  position: absolute;
+  content: "";
+  width: 276px;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: white;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.link_restaurant_page a:hover {
+  color: #95a5a6;
+}
+
+.link_restaurant_page a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.fod {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.foodimage {
+  padding-right: 188px;
+}
+
+/*This is the instrction and photo of dinningroom in detail*/
+#dinningroom {
+  background-color: white;
+  min-height: 750px;
+  width: 100%;
+  padding: 0em;
+  overflow: hidden;
+  margin: 60px auto;
+  position: relative;
+}
+
+/*the photo of dinningroom*/
+.dinning {
+  display: inline-block;
+  position: absolute;
+  width: 52%;
+  height: 533px;
+  background-color: black;
+  background-image: url(../image/restaurant.jpeg);
+  margin: 50px 200px;
+  z-index: 2;
+}
+
+/* The description of Dinning room*/
+.instruction {
+  float: right;
+  position: absolute;
+  margin-top: 100px;
+  width: 36%;
+  height: 66%;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  margin: 180px 850px;
+  z-index: 3;
+}
+
+.text_dinning {
+  margin-top: 9%;
+  text-align: center;
+}
+
+.text_dinning h2 {
+  margin-bottom: 5%;
+  position: relative;
+}
+
+.text_dinning h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #29b7cb;
+  top: 45px;
+}
+
+.text_dinning h6 {
+  margin: 20px;
+  font-size: 1rem;
+}
+
+/*Download menu style*/
+.bun {
+  margin-top: 18px;
+  padding-left: 360px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  border-bottom: #29b7cb solid 3px;
+}
+
+.bun a:hover {
+  color: #95a5a6;
+  transition: 0.5s;
+}
+
+/*this is part of adventure*/
+#adventure {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../image/water.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.adventure_img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  line-height: 100vh; /*make the text align into the middle of the background_image*/
+}
+
+/* this code define a animation called wave */
+@keyframes wave {
+  from {
+    background-position: 0 30px; /*from bottom to top*/
+  }
+
+  50% {
+    background-position: 1000px 0px;
+  }
+
+  to {
+    background-position: 0px 30px; /*from left to right*/
+  }
+}
+
+/* i set a wavy graphic as the background image of the 'adventure' word*/
+.wave_img {
+  background-image: url(../image/wave.png);
+  color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /*make the background-image appear on the text*/
+  font-family: "Roboto", sans-serif;
+  font-size: 160px;
+  letter-spacing: 9px;
+  -webkit-background-clip: text; /* the background_image becomed the background of text by cliping*/
+  font-weight: 500;
+  animation: wave 20s linear infinite; /* changing linearly*/
+}
+
+/*the specific items in adventure*/
+.showcontent {
+  padding: 0px;
+  margin: 200px auto;
+  background-color: white;
+}
+
+.instruction_activity {
+  text-align: center;
+  margin: 50px auto;
+  position: relative;
+  max-width: 600px;
+}
+
+.showcontent .instruction_activity h2 {
+  font-size: 33px;
+  font-family: "Merriweather", serif;
+}
+
+/* take a little distance from text above*/
+.showcontent .instruction_activity p {
+  margin: 30px auto;
+}
+
+/* the two line after and before the title*/
+.instruction_activity h2::before {
+  content: "";
+  display: block; /* this property is very important*/
+  position: absolute;
+  width: 100px;
+  height: 3px; /*set  width and height of the line*/
+  background: #29b7cb;
+  left: 0;
+  top: 20%;
+}
+
+.instruction_activity h2::after {
+  content: "";
+  display: block; /* this property is very important*/
+  position: absolute;
+  width: 100px;
+  height: 3px; /*set  width and height of the line*/
+  background: #29b7cb;
+  right: 0;
+  top: 20%;
+}
+/*the position of image*/
+.diving_img {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diving {
+  width: 1100px;
+  height: 500px;
+  background-color: black;
+  background-image: url(../image/under_water.jpg);
+  background-size: cover;
+}
+
+/*the comments box*/
+.comments {
+  height: 400px;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+.box9 {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.person1 {
+  background: #fff;
+  width: 800px;
+  margin: 5%;
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.head {
+  display: inline-block;
+  background-image: url(../image/traveler1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75px;
+  height: 75px;
+  border: 3px #29b7cb solid;
+  border-radius: 100px;
+}
+
+/*footer*/
+.head1 {
+  display: inline-block;
+  background-image: url(../image/taveler2.jpg); /*https://www.pexels.com/zh-cn/photo/2577274/*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75px;
+  height: 75px;
+  border: 3px #29b7cb solid;
+  border-radius: 100px;
+}
+
+.head2 {
+  display: inline-block;
+  background-image: url(../image/traveller3.jpg); /*https://www.pexels.com/zh-cn/photo/4988248/*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75px;
+  height: 75px;
+  border: 3px #29b7cb solid;
+  border-radius: 100px;
+}
+
+.contact1 {
+  background-color: #29b7cb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cotbox1 {
+  color: white;
+  height: 290px;
+  margin-bottom: 5px;
+  margin-left: 23%;
+}
+
+.social_media {
+  display: flex;
+  margin: 30px 0px;
+}
+
+.social_media a {
+  margin: 5px 30px 0px 0px;
+}
+
+.time {
+  margin-top: 50px;
+}
+
+.cotbox1 p {
+  margin-top: 50px;
+}
+
+.address {
+  color: white;
+  height: 290px;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+
+.address p {
+  margin-top: 15px;
+}
